@@ -35,4 +35,7 @@ dependencies {
     implementation(Android.gson)
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+
+    implementation(Navigation.navigation_fragment)
+    implementation(Navigation.navigation_ui)
 }

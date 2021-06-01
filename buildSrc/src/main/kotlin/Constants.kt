@@ -21,3 +21,7 @@ object AndroidxVersion {
     const val lifecycle = "2.2.0"
     const val recyclerView = "1.2.0-beta01"
 }
+
+object NavigationVersions {
+    const val navigation = "2.3.0"
+}

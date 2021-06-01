@@ -16,3 +16,8 @@ object Android {
     const val lifecycle = "androidx.lifecycle:lifecycle-livedata-ktx:${AndroidxVersion.lifecycle}"
     const val recyclerview ="androidx.recyclerview:recyclerview:${AndroidxVersion.recyclerView}"
 }
+
+object Navigation {
+    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${NavigationVersions.navigation}"
+    const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${NavigationVersions.navigation}"
+}
