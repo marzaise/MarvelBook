@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="titleText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="mediumText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="titleExpandableView" parent="@android:style/Widget.TextView">
+        <item name="android:paddingTop">@dimen/space_top_title</item>
+        <item name="android:paddingRight">25dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+</resources>

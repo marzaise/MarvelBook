@@ -9,6 +9,10 @@ android {
     compileSdkVersion(SdkVersions.compile_sdk)
     buildToolsVersion(SdkVersions.build_tools)
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId(ApplicationId.id)
         minSdkVersion(SdkVersions.min_sdk)
@@ -39,6 +43,7 @@ dependencies {
     implementation(Android.lifecycle)
     implementation(Android.recyclerview)
     implementation(Android.gson)
+    implementation(Android.palette)
 
     implementation(Navigation.navigation_fragment)
     implementation(Navigation.navigation_ui)
@@ -51,4 +56,9 @@ dependencies {
     kapt(Hilt.compiler)
     implementation(Hilt.lifecycle)
     kapt(Hilt.compiler_androidX)
+
+    implementation(Coroutines.coroutines)
+
+    implementation(Glide.glide)
+    kapt(Glide.glide_compiler)
 }

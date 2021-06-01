@@ -6,7 +6,7 @@ object SdkVersions {
     const val build_tools = "30.0.3"
     const val compile_sdk = 30
     const val target_sdk = 30
-    const val min_sdk = 16
+    const val min_sdk = 17
     const val version_name = "1.0"
     const val version_code = 1
 }
@@ -20,6 +20,7 @@ object AndroidxVersion {
     const val gson = "2.8.6"
     const val lifecycle = "2.2.0"
     const val recyclerView = "1.2.0-beta01"
+    const val palette = "1.0.0"
 }
 
 object NavigationVersions {
@@ -35,4 +36,12 @@ object HiltVersion {
     const val hilt = "2.31.2-alpha"
     const val androidX = "1.0.0-alpha02"
     const val hilt_plugin = "2.28-alpha"
+}
+
+object CoroutinesVersion {
+    const val coroutines = "1.4.1"
+}
+
+object GlideVersion {
+    const val glide = "4.12.0"
 }

@@ -17,6 +17,7 @@ object Android {
         "androidx.constraintlayout:constraintlayout:${AndroidxVersion.constraintLayout}"
     const val lifecycle = "androidx.lifecycle:lifecycle-livedata-ktx:${AndroidxVersion.lifecycle}"
     const val recyclerview ="androidx.recyclerview:recyclerview:${AndroidxVersion.recyclerView}"
+    const val palette ="androidx.palette:palette-ktx:${AndroidxVersion.palette}"
 }
 
 object Navigation {
@@ -36,4 +37,14 @@ object Hilt {
     const val compiler = "com.google.dagger:hilt-android-compiler:${HiltVersion.hilt}"
     const val lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${HiltVersion.androidX}"
     const val compiler_androidX = "androidx.hilt:hilt-compiler:${HiltVersion.androidX}"
+}
+
+object Coroutines {
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${CoroutinesVersion.coroutines}"
+    const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${CoroutinesVersion.coroutines}"
+}
+
+object Glide {
+    const val glide = "com.github.bumptech.glide:glide:${GlideVersion.glide}"
+    const val glide_compiler = "com.github.bumptech.glide:glide:${GlideVersion.glide}"
 }

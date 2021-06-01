@@ -4,7 +4,9 @@ import com.marzaise.marvelbook.data.local.HeroModel
 
 internal fun MarvelHeroResponse.toDomainModel(): HeroModel =
     HeroModel(
-        name = this.name
+        name = this.name,
+        image = this.thumbnail.path + "." + this.thumbnail.extension,
+        description = this.description
     )
 
 internal fun MarvelListHeroesResponse.toDomainModel(): List<HeroModel> =

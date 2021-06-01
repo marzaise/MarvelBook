@@ -25,8 +25,8 @@ object NetModule {
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
         return OkHttpClient().newBuilder()
-            .connectTimeout(500, TimeUnit.MILLISECONDS)
-            .readTimeout(500, TimeUnit.MILLISECONDS)
+            .connectTimeout(5000, TimeUnit.MILLISECONDS)
+            .readTimeout(5000, TimeUnit.MILLISECONDS)
             .addInterceptor(MarvelApiInterceptor())
             .addNetworkInterceptor(logging)
             .build()
