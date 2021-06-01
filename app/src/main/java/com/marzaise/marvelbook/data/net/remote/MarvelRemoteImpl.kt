@@ -1,12 +1,13 @@
-package com.marzaise.marvelbook.data.repository.remote
+package com.marzaise.marvelbook.data.net.remote
 
 import android.util.Log
 import com.marzaise.marvelbook.data.net.MarvelService
 import com.marzaise.marvelbook.data.net.models.MarvelListHeroesResponse
+import com.marzaise.marvelbook.domain.remote.MarvelRemote
 import javax.inject.Inject
 
 class MarvelRemoteImpl @Inject constructor(private val marvelService: MarvelService) :
-        MarvelRemote {
+    MarvelRemote {
 
     private val limitItems = 20
 

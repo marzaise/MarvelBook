@@ -45,3 +45,7 @@ object CoroutinesVersion {
 object GlideVersion {
     const val glide = "4.12.0"
 }
+
+object RoomVerion {
+    const val room = "2.2.6"
+}

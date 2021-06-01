@@ -43,7 +43,7 @@ object Hilt {
 }
 
 object Coroutines {
-    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${CoroutinesVersion.coroutines}"
+    const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${CoroutinesVersion.coroutines}"
     const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${CoroutinesVersion.coroutines}"
 }
 
@@ -51,3 +51,10 @@ object Glide {
     const val glide = "com.github.bumptech.glide:glide:${GlideVersion.glide}"
     const val glide_compiler = "com.github.bumptech.glide:glide:${GlideVersion.glide}"
 }
+
+object Room {
+    const val runtime = "androidx.room:room-runtime:${RoomVerion.room}"
+    const val ktx = "androidx.room:room-ktx:${RoomVerion.room}"
+    const val compiler = "androidx.room:room-compiler:${RoomVerion.room}"
+}
+

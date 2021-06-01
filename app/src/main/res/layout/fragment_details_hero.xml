@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:snackBar="@{viewModel.errorText}"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -65,7 +66,9 @@
                     android:layout_centerVertical="true"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
+                    android:onClick="@{() -> viewModel.favoriteClick()}"
                     android:layout_marginRight="10dp"
+                    app:favoriteSource="@{viewModel.hero.favorite}"
                     android:padding="8dp"
                     android:src="@drawable/ic_favourite_unselected" />
             </RelativeLayout>

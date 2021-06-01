@@ -1,23 +1,23 @@
 package com.marzaise.marvelbook.binding
 
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.graphics.alpha
-import androidx.core.graphics.blue
-import androidx.core.graphics.green
-import androidx.core.graphics.red
+import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
-import androidx.palette.graphics.Palette
+import com.google.android.material.snackbar.Snackbar
+import com.marzaise.marvelbook.R
 
 object ViewBinding {
+
+    @JvmStatic
+    @BindingAdapter("snackBar")
+    fun snackBar(view: View, text: String?) {
+        if (!text.isNullOrEmpty())
+            Snackbar.make(view, text, Snackbar.LENGTH_LONG).show()
+    }
+
     @JvmStatic
     @BindingAdapter("isVisible")
     fun setVisible(view: View, isVisible: Boolean) {
@@ -31,5 +31,11 @@ object ViewBinding {
             .asBitmap()
             .load(imageUrl)
             .into(view)
+    }
+
+    @JvmStatic
+    @BindingAdapter(value = ["favoriteSource"], requireAll = false)
+    fun bindFavoriteIcon(view: ImageView, isFavorite: Boolean) {
+        view.setImageResource(if (isFavorite) R.drawable.ic_favourite_selected else R.drawable.ic_favourite_unselected)
     }
 }

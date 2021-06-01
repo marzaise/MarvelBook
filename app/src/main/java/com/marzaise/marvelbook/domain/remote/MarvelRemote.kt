@@ -1,4 +1,4 @@
-package com.marzaise.marvelbook.data.repository.remote
+package com.marzaise.marvelbook.domain.remote
 
 import com.marzaise.marvelbook.data.net.models.MarvelListHeroesResponse
 

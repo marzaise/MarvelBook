@@ -15,7 +15,7 @@
             app:destination="@id/heroDetailFragment">
             <argument
                 android:name="hero"
-                app:argType="com.marzaise.marvelbook.data.models.HeroModel"
+                app:argType="com.marzaise.marvelbook.domain.models.HeroModel"
                 app:nullable="true" />
         </action>
     </fragment>
@@ -27,7 +27,7 @@
 
         <argument
             android:name="hero"
-            app:argType="com.marzaise.marvelbook.data.models.HeroModel"
+            app:argType="com.marzaise.marvelbook.domain.models.HeroModel"
             app:nullable="false" />
 
     </fragment>

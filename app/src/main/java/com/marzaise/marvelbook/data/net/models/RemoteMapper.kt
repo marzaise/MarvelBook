@@ -1,12 +1,13 @@
 package com.marzaise.marvelbook.data.net.models
 
-import com.marzaise.marvelbook.data.models.HeroModel
+import com.marzaise.marvelbook.domain.models.HeroModel
 
 internal fun MarvelHeroResponse.toDomainModel(): HeroModel =
     HeroModel(
         name = this.name,
         image = this.thumbnail.path + "." + this.thumbnail.extension,
-        description = this.description
+        description = this.description,
+        isFavorite = false
     )
 
 internal fun MarvelListHeroesResponse.toDomainModel(): List<HeroModel> =

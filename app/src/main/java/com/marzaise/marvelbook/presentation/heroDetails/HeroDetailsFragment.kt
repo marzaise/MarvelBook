@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.transition.TransitionInflater
 import com.marzaise.marvelbook.R
 import com.marzaise.marvelbook.databinding.FragmentDetailsHeroBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,7 +17,7 @@ class HeroDetailsFragment : Fragment(R.layout.fragment_details_hero) {
 
         requireArguments().let {
             HeroDetailsFragmentArgs.fromBundle(it).also { args ->
-                viewModel.loadHeroe(args.hero)
+                viewModel.loadHero(args.hero)
             }
         }
 

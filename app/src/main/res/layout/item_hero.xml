@@ -7,7 +7,7 @@
 
         <variable
             name="hero"
-            type="com.marzaise.marvelbook.data.models.HeroModel" />
+            type="com.marzaise.marvelbook.domain.models.HeroModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -61,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    app:favoriteSource="@{hero.isFavorite}"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:padding="8dp"

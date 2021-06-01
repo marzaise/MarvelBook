@@ -6,14 +6,14 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class GetMarvelListUseCase @Inject constructor(private val marvelRepository: MarvelRepository): UseCase<List<HeroModel>, Int?>() {
+class InsertHeroLocalUseCase @Inject constructor(private val marvelRepository: MarvelRepository): UseCase<Any, HeroModel>() {
 
     override suspend fun run(
-        page: Int?,
+        params: HeroModel?,
         onProgress: (() -> Unit)?,
         onSuccess: (() -> Unit)?,
         onError: ((String?) -> Unit)?
-    ): List<HeroModel> {
-        return marvelRepository.getHeroesList(page!!)
+    ): Any {
+        return marvelRepository.insertHeroLocal(params!!)
     }
 }

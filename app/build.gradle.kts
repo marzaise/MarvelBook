@@ -64,8 +64,14 @@ dependencies {
     implementation(Hilt.lifecycle)
     kapt(Hilt.compiler_androidX)
 
-    implementation(Coroutines.coroutines)
+    implementation(Coroutines.android)
+    testImplementation(Coroutines.test)
+    testImplementation(Coroutines.test)
 
     implementation(Glide.glide)
     kapt(Glide.glide_compiler)
+
+    implementation(Room.runtime)
+    implementation(Room.ktx)
+    kapt(Room.compiler)
 }

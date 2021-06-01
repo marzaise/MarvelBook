@@ -5,12 +5,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.marzaise.marvelbook.R
-import com.marzaise.marvelbook.data.models.HeroModel
+import com.marzaise.marvelbook.domain.models.HeroModel
 import com.marzaise.marvelbook.databinding.ItemHeroBinding
 
-typealias DetailsClick = (HeroModel) -> Unit
-
-class HeroesAdapter(val clickListener: DetailsClick) : RecyclerView.Adapter<HeroesAdapter.HeroesViewHolder>() {
+class HeroesAdapter(val detailsClick: ((HeroModel) -> Unit),
+                    val favouriteClick: (HeroModel, Boolean) -> Unit) : RecyclerView.Adapter<HeroesAdapter.HeroesViewHolder>() {
 
     private var data: MutableList<HeroModel> = mutableListOf()
 
@@ -32,7 +31,15 @@ class HeroesAdapter(val clickListener: DetailsClick) : RecyclerView.Adapter<Hero
             binding.root.setOnClickListener {
                 val position = bindingAdapterPosition.takeIf { it != RecyclerView.NO_POSITION }
                     ?: return@setOnClickListener
-                clickListener(data[position])
+                detailsClick(data[position])
+            }
+
+            binding.ivFavourite.setOnClickListener {
+                val position = bindingAdapterPosition.takeIf { it != RecyclerView.NO_POSITION }
+                    ?: return@setOnClickListener
+                data[position].toggleFavorite()
+                favouriteClick(data[position], data[position].isFavorite)
+                notifyItemChanged(position)
             }
         }
     }

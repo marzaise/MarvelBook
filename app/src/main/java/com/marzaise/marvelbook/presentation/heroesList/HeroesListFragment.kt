@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.marzaise.marvelbook.R
-import com.marzaise.marvelbook.data.models.HeroModel
+import com.marzaise.marvelbook.domain.models.HeroModel
 import com.marzaise.marvelbook.databinding.FragmentListHeroesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +20,7 @@ class HeroesListFragment : Fragment(R.layout.fragment_list_heroes){
         val binding = FragmentListHeroesBinding.bind(view)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.adapter = HeroesAdapter { hero -> gotToHero(hero) }
+        binding.adapter = HeroesAdapter({ hero -> gotToHero(hero) }, {hero, isFavourite -> favoriteHero(hero, isFavourite)})
 
         viewModel.loadHeroes()
     }
@@ -29,5 +28,9 @@ class HeroesListFragment : Fragment(R.layout.fragment_list_heroes){
     private fun gotToHero(hero: HeroModel){
         val action = HeroesListFragmentDirections.actionListFragmentToDetailsFragment(hero)
         findNavController().navigate(action)
+    }
+
+    private fun favoriteHero(hero: HeroModel, isFavorite: Boolean){
+        viewModel.setHeroFavourite(hero, isFavorite)
     }
 }
