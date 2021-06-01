@@ -2,6 +2,7 @@ package com.marzaise.marvelbook.di
 
 import com.marzaise.marvelbook.BuildConfig
 import com.marzaise.marvelbook.data.net.MarvelService
+import com.marzaise.marvelbook.data.net.interceptor.MarvelApiInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +28,7 @@ object NetModule {
         return OkHttpClient().newBuilder()
             .connectTimeout(500, TimeUnit.MILLISECONDS)
             .readTimeout(500, TimeUnit.MILLISECONDS)
+            .addInterceptor(MarvelApiInterceptor())
             .addNetworkInterceptor(logging)
             .build()
     }
@@ -44,6 +46,6 @@ object NetModule {
 
     @Provides
     @Singleton
-    fun provideRecipesService(retrofit: Retrofit): MarvelService =
+    fun provideMarvelService(retrofit: Retrofit): MarvelService =
             retrofit.create(MarvelService::class.java)
 }
