@@ -1,6 +1,6 @@
 package com.marzaise.marvelbook.data.net.models
 
-import com.marzaise.marvelbook.data.local.HeroModel
+import com.marzaise.marvelbook.data.models.HeroModel
 
 internal fun MarvelHeroResponse.toDomainModel(): HeroModel =
     HeroModel(

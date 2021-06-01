@@ -3,6 +3,8 @@ plugins {
     id(Plugins.kotlin_android)
     id(Plugins.kapt)
     id(Plugins.hilt)
+    id(Plugins.navigation)
+    id(Plugins.extensions)
 }
 
 android {
@@ -11,6 +13,10 @@ android {
 
     buildFeatures {
         dataBinding = true
+    }
+
+    androidExtensions {
+        isExperimental = true
     }
 
     defaultConfig {
@@ -23,6 +29,7 @@ android {
         buildConfigField("String", "API_URL", "\"https://gateway.marvel.com:443/v1/public/\"")
         buildConfigField("String", "PUBLIC_KEY", "\"2bfd78abf2c178541244193d2d79b57f\"")
         buildConfigField("String", "PRIVATE_KEY", "\"8b2cd16e58999b4a42e495b669c089b9767ebd7d\"")
+
     }
 
     compileOptions {

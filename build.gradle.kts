@@ -7,6 +7,7 @@ buildscript {
         classpath(Android.gradle)
         classpath(Android.kotlin_gradle)
         classpath(Hilt.hilt_plugin)
+        classpath(Navigation.safe_args)
     }
 }
 

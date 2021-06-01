@@ -3,6 +3,8 @@ object Plugins {
     const val kotlin_android = "kotlin-android"
     const val kapt = "kotlin-kapt"
     const val hilt = "dagger.hilt.android.plugin"
+    const val navigation = "androidx.navigation.safeargs.kotlin"
+    const val extensions = "org.jetbrains.kotlin.android.extensions"
 }
 
 object Android {
@@ -23,6 +25,7 @@ object Android {
 object Navigation {
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${NavigationVersions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${NavigationVersions.navigation}"
+    const val safe_args = "androidx.navigation:navigation-safe-args-gradle-plugin:${NavigationVersions.navigation}"
 }
 
 object Network {

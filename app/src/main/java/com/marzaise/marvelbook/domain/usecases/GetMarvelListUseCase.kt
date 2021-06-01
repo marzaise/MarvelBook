@@ -1,6 +1,6 @@
 package com.marzaise.marvelbook.domain.usecases
 
-import com.marzaise.marvelbook.data.local.HeroModel
+import com.marzaise.marvelbook.data.models.HeroModel
 import com.marzaise.marvelbook.data.repository.MarvelRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
@@ -14,6 +14,6 @@ class GetMarvelListUseCase @Inject constructor(private val marvelRepository: Mar
         onSuccess: (() -> Unit)?,
         onError: ((String?) -> Unit)?
     ): List<HeroModel> {
-        return marvelRepository.getHeroesList()
+        return marvelRepository.getHeroesList(page!!)
     }
 }

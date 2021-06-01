@@ -10,5 +10,25 @@
         android:name="com.marzaise.marvelbook.presentation.heroesList.HeroesListFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_list_heroes">
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:destination="@id/heroDetailFragment">
+            <argument
+                android:name="hero"
+                app:argType="com.marzaise.marvelbook.data.models.HeroModel"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/heroDetailFragment"
+        android:name="com.marzaise.marvelbook.presentation.heroDetails.HeroDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details_hero">
+
+        <argument
+            android:name="hero"
+            app:argType="com.marzaise.marvelbook.data.models.HeroModel"
+            app:nullable="false" />
+
     </fragment>
 </navigation>

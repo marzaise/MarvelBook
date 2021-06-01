@@ -1,12 +1,11 @@
 package com.marzaise.marvelbook.presentation.heroesList
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.marzaise.marvelbook.R
-import com.marzaise.marvelbook.data.local.HeroModel
+import com.marzaise.marvelbook.data.models.HeroModel
 import com.marzaise.marvelbook.databinding.ItemHeroBinding
 
 typealias DetailsClick = (HeroModel) -> Unit

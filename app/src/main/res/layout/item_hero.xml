@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="hero"
-            type="com.marzaise.marvelbook.data.local.HeroModel" />
+            type="com.marzaise.marvelbook.data.models.HeroModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -30,17 +31,18 @@
                 android:scaleType="centerCrop"
                 android:transitionName="profileImage"
                 app:imageUrl="@{hero.image}"
-                app:textView="@{tvName}" />
+                app:textView="@{tvName}"
+                tools:targetApi="lollipop" />
 
             <RelativeLayout
                 android:id="@+id/llBottom"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:background="@color/white"
-                android:padding="5dp"
                 android:layout_below="@id/ivProfile"
+                android:background="@color/white"
                 android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvName"
@@ -48,8 +50,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@id/ivFavourite"
                     android:layout_marginLeft="8dp"
+                    android:layout_toLeftOf="@id/ivFavourite"
                     android:maxLines="2"
                     android:text="@{hero.name}" />
 
@@ -64,12 +66,12 @@
                     android:padding="8dp"
                     android:src="@drawable/ic_favourite_unselected" />
             </RelativeLayout>
-            
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_above="@id/llBottom"
-                android:background="@drawable/shadow"/>
+                android:background="@drawable/shadow" />
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

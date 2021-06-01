@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.marzaise.marvelbook.R
-import com.marzaise.marvelbook.data.local.HeroModel
+import com.marzaise.marvelbook.data.models.HeroModel
 import com.marzaise.marvelbook.databinding.FragmentListHeroesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,6 +27,7 @@ class HeroesListFragment : Fragment(R.layout.fragment_list_heroes){
     }
 
     private fun gotToHero(hero: HeroModel){
-
+        val action = HeroesListFragmentDirections.actionListFragmentToDetailsFragment(hero)
+        findNavController().navigate(action)
     }
 }
