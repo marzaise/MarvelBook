@@ -58,3 +58,11 @@ object Room {
     const val compiler = "androidx.room:room-compiler:${RoomVerion.room}"
 }
 
+object Testing {
+    const val junit_runner = "androidx.test.runner.AndroidJUnitRunner"
+    const val junit = "junit:junit:${TestVersion.junit}"
+    const val junit_test = "androidx.test.ext:junit:${TestVersion.junit_test}"
+    const val espresso_core = "androidx.test.espresso:espresso-core:${TestVersion.espresso}"
+    const val mockk = "io.mockk:mockk:${TestVersion.mockk}"
+}
+

@@ -49,3 +49,10 @@ object GlideVersion {
 object RoomVerion {
     const val room = "2.2.6"
 }
+
+object TestVersion {
+    const val junit = "4.12"
+    const val junit_test = "1.1.1"
+    const val espresso = "3.3.0"
+    const val mockk = "1.11.0"
+}
