@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath(Android.gradle)
         classpath(Android.kotlin_gradle)
+        classpath(Hilt.hilt_plugin)
     }
 }
 

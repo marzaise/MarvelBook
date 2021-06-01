@@ -1,6 +1,8 @@
 plugins {
     id(Plugins.android)
     id(Plugins.kotlin_android)
+    id(Plugins.kapt)
+    id(Plugins.hilt)
 }
 
 android {
@@ -13,6 +15,8 @@ android {
         targetSdkVersion(SdkVersions.target_sdk)
         versionCode(SdkVersions.version_code)
         versionName(SdkVersions.version_name)
+
+        buildConfigField("String", "API_URL", "\"http://developer.marvel.com\"")
     }
 
     compileOptions {
@@ -36,4 +40,13 @@ dependencies {
 
     implementation(Navigation.navigation_fragment)
     implementation(Navigation.navigation_ui)
+
+    implementation(Network.retrofit)
+    implementation(Network.gson)
+    implementation(Network.okHhtp)
+
+    implementation(Hilt.hilt)
+    kapt(Hilt.compiler)
+    implementation(Hilt.lifecycle)
+    kapt(Hilt.compiler_androidX)
 }

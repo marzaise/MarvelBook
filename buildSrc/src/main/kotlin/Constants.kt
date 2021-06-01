@@ -25,3 +25,14 @@ object AndroidxVersion {
 object NavigationVersions {
     const val navigation = "2.3.0"
 }
+
+object NetworkVersion {
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.9.0"
+}
+
+object HiltVersion {
+    const val hilt = "2.31.2-alpha"
+    const val androidX = "1.0.0-alpha02"
+    const val hilt_plugin = "2.28-alpha"
+}

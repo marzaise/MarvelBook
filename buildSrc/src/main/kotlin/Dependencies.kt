@@ -1,6 +1,8 @@
 object Plugins {
     const val android = "com.android.application"
     const val kotlin_android = "kotlin-android"
+    const val kapt = "kotlin-kapt"
+    const val hilt = "dagger.hilt.android.plugin"
 }
 
 object Android {
@@ -20,4 +22,18 @@ object Android {
 object Navigation {
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${NavigationVersions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${NavigationVersions.navigation}"
+}
+
+object Network {
+    const val retrofit = "com.squareup.retrofit2:retrofit:${NetworkVersion.retrofit}"
+    const val gson = "com.squareup.retrofit2:converter-gson:${NetworkVersion.retrofit}"
+    const val okHhtp = "com.squareup.okhttp3:logging-interceptor:${NetworkVersion.okhttp}"
+}
+
+object Hilt {
+    const val hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:${HiltVersion.hilt_plugin}"
+    const val hilt = "com.google.dagger:hilt-android:${HiltVersion.hilt}"
+    const val compiler = "com.google.dagger:hilt-android-compiler:${HiltVersion.hilt}"
+    const val lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${HiltVersion.androidX}"
+    const val compiler_androidX = "androidx.hilt:hilt-compiler:${HiltVersion.androidX}"
 }
