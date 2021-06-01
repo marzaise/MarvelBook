@@ -33,4 +33,6 @@ dependencies {
     implementation(Android.lifecycle)
     implementation(Android.recyclerview)
     implementation(Android.gson)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 }
