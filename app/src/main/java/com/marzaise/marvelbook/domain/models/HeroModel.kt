@@ -27,7 +27,7 @@ data class HeroModel(
             val heroRemote: HeroRemote = other
             return (this.name == heroRemote.name &&
                     this.description == heroRemote.description &&
-                    this.image == heroRemote.thumbnail.path + "." + heroRemote.thumbnail.extension)
+                    this.image == heroRemote.thumbnail.getUrl())
         }
         return super.equals(other)
     }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.marzaise.marvelbook.components.coroutines.DispatcherProvider
 import com.marzaise.marvelbook.domain.models.HeroModel
 import com.marzaise.marvelbook.domain.usecases.InsertHeroLocalUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HeroDetailsViewModel @Inject constructor(
     private val insertHeroLocalUseCase: InsertHeroLocalUseCase,
+    private val dispatcherProvider: DispatcherProvider
 ) : ViewModel() {
 
     private val _errorText: MutableLiveData<String> = MutableLiveData<String>()
@@ -32,7 +34,7 @@ class HeroDetailsViewModel @Inject constructor(
     fun favoriteClick(){
         hero.value!!.toggleFavorite()
         _hero.postValue(hero.value)
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcherProvider.io()) {
             insertHeroLocalUseCase.invoke(hero.value,
                 onError = {
                     _errorText.postValue(it)

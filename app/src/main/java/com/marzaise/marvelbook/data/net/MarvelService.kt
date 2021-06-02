@@ -7,6 +7,6 @@ import retrofit2.http.Query
 interface MarvelService {
 
     @GET("characters")
-    suspend fun getHeroesList(@Query("offset") offset: Int = 1, @Query("limit") limit: Int = 5): MarvelListHeroesResponse
+    suspend fun getHeroesList(@Query("offset") offset: Int, @Query("limit") limit: Int): MarvelListHeroesResponse
 
 }

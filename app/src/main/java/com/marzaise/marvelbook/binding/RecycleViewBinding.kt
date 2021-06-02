@@ -2,10 +2,10 @@ package com.marzaise.marvelbook.binding
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.marzaise.marvelbook.components.paginator.PaginatorListener
+import com.marzaise.marvelbook.components.paginator.RecyclerViewPaginator
 import com.marzaise.marvelbook.domain.models.HeroModel
 import com.marzaise.marvelbook.presentation.heroesList.HeroesAdapter
-import com.marzaise.recipesbook.components.paginator.PaginatorListener
-import com.marzaise.recipesbook.components.paginator.RecyclerViewPaginator
 
 object RecycleViewBinding {
     @JvmStatic

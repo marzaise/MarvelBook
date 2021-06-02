@@ -12,8 +12,8 @@ import org.junit.Test
 class HeroRemoteTest {
     @Test
     fun `Transform remote hero to domain`() {
-        val recipeRemote = IRON_MAN_REMOTE
-        val recipe = recipeRemote.toDomainModel()
-        assert(recipeRemote.equals(recipe))
+        val heroRemote = IRON_MAN_REMOTE
+        val hero = heroRemote.toDomainModel()
+        assert(hero.equals(heroRemote))
     }
 }

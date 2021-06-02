@@ -1,14 +1,13 @@
 package com.marzaise.marvelbook.presentation.heroesList
 
-import android.util.Log
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
+import com.marzaise.marvelbook.components.coroutines.DispatcherProvider
 import com.marzaise.marvelbook.domain.models.HeroModel
 import com.marzaise.marvelbook.domain.usecases.GetMarvelListUseCase
 import com.marzaise.marvelbook.domain.usecases.InsertHeroLocalUseCase
-import com.marzaise.recipesbook.components.paginator.PaginatorListener
+import com.marzaise.marvelbook.components.paginator.PaginatorListener
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
@@ -20,6 +19,7 @@ import javax.inject.Inject
 class HeroesListViewModel @Inject constructor(
     private val getMarvelListUseCase: GetMarvelListUseCase,
     private val insertHeroLocalUseCase: InsertHeroLocalUseCase,
+    private val dispatcherProvider: DispatcherProvider
 ) : ViewModel(), PaginatorListener {
 
     private val _errorText: MutableLiveData<String> = MutableLiveData<String>()
@@ -44,7 +44,7 @@ class HeroesListViewModel @Inject constructor(
                     isLoading.set(false)
                     _errorText.postValue(it)
                 }
-            ).asLiveData(Dispatchers.IO)
+            ).asLiveData(dispatcherProvider.io())
         }
     }
 
@@ -54,8 +54,7 @@ class HeroesListViewModel @Inject constructor(
 
     fun setHeroFavourite(hero: HeroModel, isFavourite: Boolean) {
         hero.isFavorite = isFavourite
-        Log.d("favoriteThing", "calling")
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcherProvider.io()) {
             insertHeroLocalUseCase.invoke(hero,
                 onError = {
                     _errorText.postValue(it)

@@ -1,4 +1,4 @@
-package com.marzaise.recipesbook.components.paginator
+package com.marzaise.marvelbook.components.paginator
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

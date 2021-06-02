@@ -4,5 +4,7 @@ data class MarvelHeroThumbnail(
     val path: String = "",
     val extension: String = ""
 ) {
-    val url = "$path.$extension"
+    fun getUrl(): String{
+        return "$path.$extension"
+    }
 }
