@@ -10,3 +10,11 @@ internal fun HeroModel.toLocalModel(): HeroLocal =
         description = this.description,
         isFavorite = this.isFavorite
     )
+
+internal fun HeroLocal.toDomainModel(): HeroModel =
+    HeroModel(
+        name = this.name,
+        image = this.image,
+        description = this.description,
+        isFavorite = this.isFavorite
+    )
